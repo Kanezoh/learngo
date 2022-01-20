@@ -4,6 +4,26 @@ import (
   "fmt"
 )
 
+func plus(x,y int) int {
+  return x + y
+}
+
+func div (x,y int) (int, int) {
+  q := a / b
+  r := a % b
+  return q, r
+}
+// q, r := div(5, 2)
+
+func later() func(string) string {
+  var store string
+  return func(next string) string {
+    s := store
+    store = next
+    return s
+  }
+}
+
 func main() {
   // 変数定義
   var n int
@@ -44,4 +64,8 @@ func main() {
   // rune型 Unicodeコードポイントを表す
   r := '松'
   fmt.Printf("%v", r) // => "26494"
+
+  // 無名関数
+  f := func(x, y int) int { return x + y }
+  f(2,3)
 }
