@@ -74,4 +74,12 @@ func main() {
   // 無名関数
   f := func(x, y int) int { return x + y }
   f(2,3)
+
+  defer func() {
+    if x := recover(); x != nil {
+      fmt.Println(x)
+    }
+  }()
+
+  panic("runtime error!") // エラー終了
 }
