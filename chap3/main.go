@@ -24,6 +24,12 @@ func later() func(string) string {
   }
 }
 
+func runDefer() {
+  // 関数の終了時に評価
+  defer fmt.Println("defer")
+  fmt.Println("done")
+}
+
 func main() {
   // 変数定義
   var n int
